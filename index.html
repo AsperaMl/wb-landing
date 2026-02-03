@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildberries Academy — Обучающий курс по маркетплейсам 2026</title>
+    <meta name="description" content="Освойте профессию менеджера маркетплейсов с нуля за 8 недель. Практический курс с трудоустройством от экспертов Wildberries.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="#" class="logo">
+                <span class="logo__wild">WILDBERRIES</span>
+                <span class="logo__academy">ACADEMY</span>
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#program" class="nav__link">Программа</a></li>
+                    <li><a href="#results" class="nav__link">Результаты</a></li>
+                    <li><a href="#expert" class="nav__link">Эксперт</a></li>
+                    <li><a href="#pricing" class="nav__link">Тарифы</a></li>
+                    <li><a href="#faq" class="nav__link">FAQ</a></li>
+                </ul>
+            </nav>
+            <a href="https://managmp.getcourse.ru/learn?utm_source=vk_olga&utm_medium=group" class="header__cta btn btn--small" target="_blank">Записаться</a>
+            <button class="burger" id="burger" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__bg"></div>
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        Освой профессию <span class="highlight">менеджера маркетплейсов</span> и зарабатывай от <span class="highlight">115 000 ₽/мес</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        Получите востребованную профессию с нуля и начните зарабатывать от 55 000 ₽ — удалённо или в офисе.
+                    </p>
+                    <div class="hero__cta-group">
+                        <a href="https://managmp.getcourse.ru/learn?utm_source=vk_olga&utm_medium=group" class="btn btn--primary btn--large" target="_blank">Начать обучение сейчас</a>
+                        <a href="#free-course" class="btn btn--outline btn--large">Бесплатный урок</a>
+                    </div>
+                    <ul class="hero__bullets">
+                        <li>📹 42 видеоурока + практика</li>
+                        <li>💼 Помощь с трудоустройством</li>
+                        <li>🚀 Подходит новичкам без опыта</li>
+                    </ul>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__mockup">
+                        <div class="mockup-card">
+                            <div class="mockup-card__header">
+                                <span class="mockup-card__dot"></span>
+                                <span class="mockup-card__dot"></span>
+                                <span class="mockup-card__dot"></span>
+                            </div>
+                            <div class="mockup-card__content">
+                                <div class="mockup-stat">
+                                    <span class="mockup-stat__value">80 000 — 150 000+ ₽</span>
+                                    <span class="mockup-stat__label">Зарплата менеджера WB</span>
+                                </div>
+                                <div class="mockup-chart">
+                                    <div class="mockup-chart__bar" style="height: 40%"></div>
+                                    <div class="mockup-chart__bar" style="height: 55%"></div>
+                                    <div class="mockup-chart__bar" style="height: 45%"></div>
+                                    <div class="mockup-chart__bar" style="height: 70%"></div>
+                                    <div class="mockup-chart__bar" style="height: 85%"></div>
+                                    <div class="mockup-chart__bar mockup-chart__bar--active" style="height: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- For Whom Section -->
+        <section class="for-whom" id="for-whom">
+            <div class="container">
+                <h2 class="section-title">Для кого мы создали <span class="highlight">этот курс?</span></h2>
+                <div class="for-whom__grid">
+                    <div class="for-whom__card">
+                        <div class="for-whom__icon for-whom__icon--purple">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="for-whom__title">Ищущих новую профессию</h3>
+                        <p class="for-whom__text">Освоите востребованную специальность с нуля и сможете работать менеджером маркетплейсов удалённо или в офисе.</p>
+                    </div>
+                    <div class="for-whom__card">
+                        <div class="for-whom__icon for-whom__icon--orange">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20V10"></path>
+                                <path d="M18 20V4"></path>
+                                <path d="M6 20v-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="for-whom__title">Желающих сменить работу</h3>
+                        <p class="for-whom__text">Устали от текущей работы? Менеджер WB — это удалёнка, гибкий график и зарплата от 55 000 ₽ уже через 2 месяца.</p>
+                    </div>
+                    <div class="for-whom__card">
+                        <div class="for-whom__icon for-whom__icon--pink">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <h3 class="for-whom__title">Мам в декрете</h3>
+                        <p class="for-whom__text">Работайте из дома в удобное время. Совмещайте уход за ребёнком с профессией, которая приносит реальный доход.</p>
+                    </div>
+                    <div class="for-whom__card">
+                        <div class="for-whom__icon for-whom__icon--green">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="for-whom__title">Студентов и фрилансеров</h3>
+                        <p class="for-whom__text">Получите навыки, которые реально нужны рынку. Работодатели ищут менеджеров WB — вакансий больше, чем специалистов.</p>
+                    </div>
+                </div>
+                <div class="for-whom__note">
+                    <p>Менеджер маркетплейсов — одна из самых востребованных профессий 2026 года. Мы не просто учим теории — вы получите реальные навыки и помощь в трудоустройстве. После курса вы сможете работать на селлеров или вести несколько магазинов как фрилансер.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results" id="results">
+            <div class="container">
+                <h2 class="section-title">Чему вы научитесь на <span class="highlight">курсе?</span></h2>
+                <p class="section-subtitle">Вы освоите все навыки, которые нужны работодателям. Ваше резюме будет выглядеть привлекательно для селлеров и агентств.</p>
+                
+                <div class="results__grid">
+                    <div class="results__skills">
+                        <h3 class="results__heading">Основные навыки</h3>
+                        <ul class="results__list">
+                            <li><span class="results__plus">+</span> Оформлять профиль поставщика и заполнять визитку</li>
+                            <li><span class="results__plus">+</span> Оформлять карточки товаров и оптимизировать их для продвижения</li>
+                            <li><span class="results__plus">+</span> Рассчитывать рентабельность акций, устанавливать скидки и промокоды</li>
+                            <li><span class="results__plus">+</span> Определять товары и ниши, которые принесут максимальную прибыль</li>
+                            <li><span class="results__plus">+</span> Готовить товары к поставкам на Wildberries и работать по схемам FBO и FBS</li>
+                            <li><span class="results__plus">+</span> Анализировать отчёты по продажам и улучшать показатели</li>
+                            <li><span class="results__plus">+</span> Просчитывать юнит-экономику и план запуска товаров</li>
+                            <li><span class="results__plus">+</span> Продвигать товары по внешним и внутренним каналам рекламы</li>
+                            <li><span class="results__plus">+</span> Решать проблемные ситуации с онлайн-площадкой</li>
+                        </ul>
+                    </div>
+                    <div class="results__tools">
+                        <h3 class="results__heading">Инструменты</h3>
+                        <div class="tools-grid">
+                            <div class="tool-badge"><span class="tool-badge__icon">WB</span> Wildberries</div>
+                            <div class="tool-badge"><span class="tool-badge__icon tool-badge__icon--ozon">O</span> Ozon</div>
+                            <div class="tool-badge"><span class="tool-badge__icon tool-badge__icon--mp">MP</span> MPSTATS</div>
+                            <div class="tool-badge"><span class="tool-badge__icon tool-badge__icon--money">₽</span> Moneyplace</div>
+                            <div class="tool-badge"><span class="tool-badge__icon tool-badge__icon--sf">SF</span> SellerFox</div>
+                            <div class="tool-badge"><span class="tool-badge__icon tool-badge__icon--mg">MG</span> MarketGuru</div>
+                            <div class="tool-badge"><span class="tool-badge__icon tool-badge__icon--wb">WB</span> Wildbox</div>
+                            <div class="tool-badge"><span class="tool-badge__icon tool-badge__icon--sm">SM</span> Sellmonitor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Section -->
+        <section class="program" id="program">
+            <div class="container">
+                <h2 class="section-title">Программа <span class="highlight">обучения</span></h2>
+                <p class="section-subtitle">8 модулей, 42 урока, практические задания и готовые шаблоны</p>
+                
+                <div class="program__modules">
+                    <div class="module">
+                        <div class="module__header">
+                            <div class="module__number">01</div>
+                            <div class="module__info">
+                                <h3 class="module__title">Введение в маркетплейсы</h3>
+                                <span class="module__meta">4 урока • 1.5 часа</span>
+                            </div>
+                            <button class="module__toggle" aria-label="Развернуть">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="module__content">
+                            <ul class="module__list">
+                                <li>Обзор рынка маркетплейсов в России</li>
+                                <li>Как работает Wildberries изнутри</li>
+                                <li>Регистрация личного кабинета продавца</li>
+                                <li>Настройка профиля и визитки</li>
+                            </ul>
+                            <div class="module__result">
+                                <span class="module__result-label">На выходе:</span>
+                                Готовый аккаунт продавца + чеклист настройки
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module">
+                        <div class="module__header">
+                            <div class="module__number">02</div>
+                            <div class="module__info">
+                                <h3 class="module__title">Выбор ниши и анализ конкурентов</h3>
+                                <span class="module__meta">6 уроков • 2.5 часа</span>
+                            </div>
+                            <button class="module__toggle" aria-label="Развернуть">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="module__content">
+                            <ul class="module__list">
+                                <li>Критерии выбора прибыльной ниши</li>
+                                <li>Анализ спроса и сезонности</li>
+                                <li>Работа с аналитическими сервисами</li>
+                                <li>Оценка конкурентов и их стратегий</li>
+                                <li>Поиск товаров-бестселлеров</li>
+                                <li>Расчёт потенциальной прибыли</li>
+                            </ul>
+                            <div class="module__result">
+                                <span class="module__result-label">На выходе:</span>
+                                Таблица анализа 10 ниш + выбранная ниша
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module">
+                        <div class="module__header">
+                            <div class="module__number">03</div>
+                            <div class="module__info">
+                                <h3 class="module__title">Юнит-экономика и финансы</h3>
+                                <span class="module__meta">5 уроков • 2 часа</span>
+                            </div>
+                            <button class="module__toggle" aria-label="Развернуть">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="module__content">
+                            <ul class="module__list">
+                                <li>Расчёт себестоимости товара</li>
+                                <li>Комиссии и логистика Wildberries</li>
+                                <li>Формула расчёта маржинальности</li>
+                                <li>Точка безубыточности</li>
+                                <li>Планирование бюджета на старт</li>
+                            </ul>
+                            <div class="module__result">
+                                <span class="module__result-label">На выходе:</span>
+                                Калькулятор юнит-экономики + финплан
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module">
+                        <div class="module__header">
+                            <div class="module__number">04</div>
+                            <div class="module__info">
+                                <h3 class="module__title">Поставщики и закупки</h3>
+                                <span class="module__meta">5 уроков • 2 часа</span>
+                            </div>
+                            <button class="module__toggle" aria-label="Развернуть">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="module__content">
+                            <ul class="module__list">
+                                <li>Где искать поставщиков в России и Китае</li>
+                                <li>Проверка надёжности поставщика</li>
+                                <li>Переговоры и условия сотрудничества</li>
+                                <li>Логистика и таможня</li>
+                                <li>Сертификация товаров</li>
+                            </ul>
+                            <div class="module__result">
+                                <span class="module__result-label">На выходе:</span>
+                                База поставщиков + шаблон договора
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module">
+                        <div class="module__header">
+                            <div class="module__number">05</div>
+                            <div class="module__info">
+                                <h3 class="module__title">Создание продающей карточки</h3>
+                                <span class="module__meta">7 уроков • 3 часа</span>
+                            </div>
+                            <button class="module__toggle" aria-label="Развернуть">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="module__content">
+                            <ul class="module__list">
+                                <li>Требования к фото и инфографике</li>
+                                <li>SEO-оптимизация заголовка и описания</li>
+                                <li>Работа с характеристиками</li>
+                                <li>Rich-контент и видео</li>
+                                <li>A/B тестирование карточек</li>
+                                <li>Работа с отзывами и вопросами</li>
+                                <li>Анализ конверсии</li>
+                            </ul>
+                            <div class="module__result">
+                                <span class="module__result-label">На выходе:</span>
+                                Готовая карточка товара + чеклист SEO
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module">
+                        <div class="module__header">
+                            <div class="module__number">06</div>
+                            <div class="module__info">
+                                <h3 class="module__title">Поставки и логистика</h3>
+                                <span class="module__meta">5 уроков • 2 часа</span>
+                            </div>
+                            <button class="module__toggle" aria-label="Развернуть">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="module__content">
+                            <ul class="module__list">
+                                <li>FBO vs FBS: что выбрать</li>
+                                <li>Подготовка товаров к отгрузке</li>
+                                <li>Маркировка и упаковка</li>
+                                <li>Создание поставки в ЛК</li>
+                                <li>Работа с возвратами</li>
+                            </ul>
+                            <div class="module__result">
+                                <span class="module__result-label">На выходе:</span>
+                                Инструкция по поставкам + чеклист упаковки
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module">
+                        <div class="module__header">
+                            <div class="module__number">07</div>
+                            <div class="module__info">
+                                <h3 class="module__title">Реклама и продвижение</h3>
+                                <span class="module__meta">6 уроков • 2.5 часа</span>
+                            </div>
+                            <button class="module__toggle" aria-label="Развернуть">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="module__content">
+                            <ul class="module__list">
+                                <li>Внутренняя реклама Wildberries</li>
+                                <li>Автоматические и ручные кампании</li>
+                                <li>Участие в акциях и распродажах</li>
+                                <li>Внешний трафик: Telegram, VK</li>
+                                <li>Работа с блогерами</li>
+                                <li>Аналитика рекламных кампаний</li>
+                            </ul>
+                            <div class="module__result">
+                                <span class="module__result-label">На выходе:</span>
+                                Рекламная стратегия + таблица аналитики
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module">
+                        <div class="module__header">
+                            <div class="module__number">08</div>
+                            <div class="module__info">
+                                <h3 class="module__title">Карьера и трудоустройство</h3>
+                                <span class="module__meta">4 урока • 1.5 часа</span>
+                            </div>
+                            <button class="module__toggle" aria-label="Развернуть">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="module__content">
+                            <ul class="module__list">
+                                <li>Как составить резюме менеджера WB</li>
+                                <li>Где искать вакансии и заказчиков</li>
+                                <li>Сколько брать за свои услуги</li>
+                                <li>Как вести несколько магазинов одновременно</li>
+                            </ul>
+                            <div class="module__result">
+                                <span class="module__result-label">На выходе:</span>
+                                Готовое резюме + доступ к базе вакансий
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process">
+            <div class="container">
+                <h2 class="section-title">Как проходит <span class="highlight">обучение?</span></h2>
+                
+                <div class="process__steps">
+                    <div class="process__step">
+                        <div class="process__number">1</div>
+                        <h3 class="process__title">Получаете доступ</h3>
+                        <p class="process__text">Сразу после оплаты вы получаете доступ к платформе с видеоуроками и материалами</p>
+                    </div>
+                    <div class="process__connector"></div>
+                    <div class="process__step">
+                        <div class="process__number">2</div>
+                        <h3 class="process__title">Смотрите уроки</h3>
+                        <p class="process__text">Изучаете материал в удобном темпе, каждый урок — конкретный навык</p>
+                    </div>
+                    <div class="process__connector"></div>
+                    <div class="process__step">
+                        <div class="process__number">3</div>
+                        <h3 class="process__title">Делаете практику</h3>
+                        <p class="process__text">После каждого модуля — практическое задание с проверкой</p>
+                    </div>
+                    <div class="process__connector"></div>
+                    <div class="process__step">
+                        <div class="process__number">4</div>
+                        <h3 class="process__title">Получаете фидбек</h3>
+                        <p class="process__text">Кураторы проверяют задания и дают обратную связь в чате</p>
+                    </div>
+                    <div class="process__connector"></div>
+                    <div class="process__step">
+                        <div class="process__number">5</div>
+                        <h3 class="process__title">Получаете работу</h3>
+                        <p class="process__text">Составляем резюме, помогаем найти первых клиентов или устроиться в штат</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cases Section -->
+        <section class="cases">
+            <div class="container">
+                <h2 class="section-title">Результаты <span class="highlight">учеников</span></h2>
+                
+                <div class="cases__grid">
+                    <div class="case-card">
+                        <div class="case-card__header">
+                            <div class="case-card__avatar">АМ</div>
+                            <div class="case-card__info">
+                                <span class="case-card__name">Анна М.</span>
+                                <span class="case-card__niche">Менеджер WB на удалёнке</span>
+                            </div>
+                        </div>
+                        <div class="case-card__stats">
+                            <div class="case-card__stat">
+                                <span class="case-card__stat-label">Было</span>
+                                <span class="case-card__stat-value case-card__stat-value--before">Без работы</span>
+                            </div>
+                            <div class="case-card__arrow">→</div>
+                            <div class="case-card__stat">
+                                <span class="case-card__stat-label">Стало</span>
+                                <span class="case-card__stat-value">95 000 ₽/мес</span>
+                            </div>
+                        </div>
+                        <p class="case-card__text">Была бухгалтером, устала от офиса. Через 2 месяца после курса нашла удалённую работу на селлера.</p>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-card__header">
+                            <div class="case-card__avatar">ДК</div>
+                            <div class="case-card__info">
+                                <span class="case-card__name">Дмитрий К.</span>
+                                <span class="case-card__niche">Фрилансер, 3 клиента</span>
+                            </div>
+                        </div>
+                        <div class="case-card__stats">
+                            <div class="case-card__stat">
+                                <span class="case-card__stat-label">Было</span>
+                                <span class="case-card__stat-value case-card__stat-value--before">45 000 ₽</span>
+                            </div>
+                            <div class="case-card__arrow">→</div>
+                            <div class="case-card__stat">
+                                <span class="case-card__stat-label">Стало</span>
+                                <span class="case-card__stat-value">140 000 ₽/мес</span>
+                            </div>
+                        </div>
+                        <p class="case-card__text">Работал курьером. Сейчас ведёт 3 магазина как фрилансер, работает из дома по своему графику.</p>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-card__header">
+                            <div class="case-card__avatar">ЕС</div>
+                            <div class="case-card__info">
+                                <span class="case-card__name">Елена С.</span>
+                                <span class="case-card__niche">В штате агентства</span>
+                            </div>
+                        </div>
+                        <div class="case-card__stats">
+                            <div class="case-card__stat">
+                                <span class="case-card__stat-label">Было</span>
+                                <span class="case-card__stat-value case-card__stat-value--before">Декрет</span>
+                            </div>
+                            <div class="case-card__arrow">→</div>
+                            <div class="case-card__stat">
+                                <span class="case-card__stat-label">Стало</span>
+                                <span class="case-card__stat-value">85 000 ₽/мес</span>
+                            </div>
+                        </div>
+                        <p class="case-card__text">Мама в декрете, искала подработку на дому. Устроилась в агентство, работает 4-5 часов в день.</p>
+                    </div>
+                    
+                    <div class="case-card">
+                        <div class="case-card__header">
+                            <div class="case-card__avatar">МВ</div>
+                            <div class="case-card__info">
+                                <span class="case-card__name">Мария В.</span>
+                                <span class="case-card__niche">Руководитель отдела WB</span>
+                            </div>
+                        </div>
+                        <div class="case-card__stats">
+                            <div class="case-card__stat">
+                                <span class="case-card__stat-label">Было</span>
+                                <span class="case-card__stat-value case-card__stat-value--before">60 000 ₽</span>
+                            </div>
+                            <div class="case-card__arrow">→</div>
+                            <div class="case-card__stat">
+                                <span class="case-card__stat-label">Стало</span>
+                                <span class="case-card__stat-value">180 000 ₽/мес</span>
+                            </div>
+                        </div>
+                        <p class="case-card__text">Была менеджером по продажам. За год выросла до руководителя отдела маркетплейсов в крупной компании.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expert Section -->
+        <section class="expert" id="expert">
+            <div class="container">
+                <h2 class="section-title">Ваш <span class="highlight">наставник</span></h2>
+                
+                <div class="expert__content">
+                    <div class="expert__photo">
+                        <div class="expert__photo-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="expert__info">
+                        <h3 class="expert__name">Александр Иванов</h3>
+                        <p class="expert__role">Эксперт по маркетплейсам, карьерный наставник</p>
+                        
+                        <div class="expert__stats">
+                            <div class="expert__stat">
+                                <span class="expert__stat-value">5+ лет</span>
+                                <span class="expert__stat-label">опыта на WB</span>
+                            </div>
+                            <div class="expert__stat">
+                                <span class="expert__stat-value">500+</span>
+                                <span class="expert__stat-label">обученных менеджеров</span>
+                            </div>
+                            <div class="expert__stat">
+                                <span class="expert__stat-value">87%</span>
+                                <span class="expert__stat-label">нашли работу за 2 мес</span>
+                            </div>
+                            <div class="expert__stat">
+                                <span class="expert__stat-value">30+</span>
+                                <span class="expert__stat-label">компаний-партнёров</span>
+                            </div>
+                        </div>
+                        
+                        <p class="expert__bio">
+                            За 5 лет обучил более 500 менеджеров маркетплейсов. Мои ученики работают в агентствах, на крупных селлеров и ведут клиентов как фрилансеры. 
+                            Знаю, какие навыки реально нужны работодателям и как быстро найти первую работу.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Free Course Section -->
+        <section class="free-course" id="free-course">
+            <div class="container">
+                <div class="free-course__card">
+                    <div class="free-course__badge">БЕСПЛАТНО</div>
+                    <h2 class="free-course__title">Начните с бесплатного мини-курса</h2>
+                    <p class="free-course__subtitle">11 уроков, которые дадут понимание: подходит ли вам профессия менеджера WB</p>
+                    
+                    <div class="free-course__content">
+                        <ul class="free-course__list">
+                            <li>✓ Урок 1: Кто такой менеджер маркетплейсов и сколько он зарабатывает (20 мин)</li>
+                            <li>✓ Урок 2: Что нужно уметь и как быстро этому научиться (25 мин)</li>
+                            <li>✓ Урок 3: Где искать работу и как составить резюме без опыта (30 мин)</li>
+                            <li>✓ Бонус: Шаблон резюме менеджера WB</li>
+                        </ul>
+                        
+                        <form class="free-course__form" id="free-form">
+                            <input type="email" placeholder="Ваш email" class="free-course__input" required>
+                            <button type="submit" class="btn btn--primary btn--large">Получить бесплатно</button>
+                        </form>
+                        
+                        <p class="free-course__note">Уроки придут на почту сразу после подписки</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <h2 class="section-title">Выберите <span class="highlight">тариф</span></h2>
+                
+                <div class="pricing__grid">
+                    <div class="pricing-card">
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__name">Самостоятельный</h3>
+                            <p class="pricing-card__desc">Для тех, кто готов учиться сам</p>
+                        </div>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">59 990 ₽</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li class="pricing-card__feature pricing-card__feature--included">42 видеоурока</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Доступ на 6 месяцев</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Шаблоны и чеклисты</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Общий чат учеников</li>
+                            <li class="pricing-card__feature">Проверка домашек</li>
+                            <li class="pricing-card__feature">Личный куратор</li>
+                            <li class="pricing-card__feature">Созвоны с экспертом</li>
+                        </ul>
+                        <a href="https://vk.com/id1093856370" class="btn btn--primary btn--full" target="_blank">Выбрать тариф</a>
+                    </div>
+                    
+                    <div class="pricing-card pricing-card--popular">
+                        <div class="pricing-card__badge">Популярный</div>
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__name">С куратором</h3>
+                            <p class="pricing-card__desc">Обратная связь и поддержка</p>
+                        </div>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">79 990 ₽</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li class="pricing-card__feature pricing-card__feature--included">42 видеоурока</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Доступ на 12 месяцев</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Шаблоны и чеклисты</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Общий чат учеников</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Проверка домашек</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Личный куратор</li>
+                            <li class="pricing-card__feature">Созвоны с экспертом</li>
+                        </ul>
+                        <a href="https://vk.com/id1093856370" class="btn btn--primary btn--full" target="_blank">Выбрать тариф</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <div class="pricing-card__header">
+                            <h3 class="pricing-card__name">VIP</h3>
+                            <p class="pricing-card__desc">Личная работа с экспертом</p>
+                        </div>
+                        <div class="pricing-card__price">
+                            <span class="pricing-card__amount">129 900 ₽</span>
+                        </div>
+                        <ul class="pricing-card__features">
+                            <li class="pricing-card__feature pricing-card__feature--included">42 видеоурока</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Доступ навсегда</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Шаблоны и чеклисты</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Общий чат учеников</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Проверка домашек</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">Личный куратор</li>
+                            <li class="pricing-card__feature pricing-card__feature--included">4 созвона с экспертом</li>
+                        </ul>
+                        <a href="https://vk.com/id1093856370" class="btn btn--primary btn--full" target="_blank">Выбрать тариф</a>
+                    </div>
+                </div>
+                
+                <p class="pricing__guarantee">💳 Безопасная оплата • Возврат в течение 14 дней, если курс не подошёл</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2 class="section-title">Частые <span class="highlight">вопросы</span></h2>
+                
+                <div class="faq__list" id="faq-list">
+                    <div class="faq__item">
+                        <button class="faq__question">
+                            <span>Нужен ли опыт для прохождения курса?</span>
+                            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Нет, курс подходит для полных новичков. Мы начинаем с основ и постепенно переходим к продвинутым темам. Если у вас уже есть опыт — вы сможете пройти базовые модули быстрее и сфокусироваться на продвинутых стратегиях.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__question">
+                            <span>Сколько времени в неделю нужно уделять обучению?</span>
+                            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Рекомендуем выделять 1-2 часа в день. Этого достаточно, чтобы пройти курс за 8 недель и успевать делать практические задания. Вы можете учиться в своём темпе — доступ к урокам сохраняется.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__question">
+                            <span>Сколько зарабатывает менеджер маркетплейсов?</span>
+                            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Начинающий менеджер получает 50-80 000 ₽, с опытом от полугода — 80-120 000 ₽. Фрилансеры, которые ведут несколько магазинов, зарабатывают 150-200 000 ₽ и больше. Всё зависит от навыков и количества клиентов.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__question">
+                            <span>Помогаете ли вы с трудоустройством?</span>
+                            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Да! В курсе есть отдельный модуль по карьере: как составить резюме, где искать вакансии, как проходить собеседования. На тарифах с куратором мы также делимся актуальными вакансиями от наших партнёров-селлеров.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__question">
+                            <span>Доступ к курсу навсегда?</span>
+                            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Срок доступа зависит от тарифа: 6 месяцев на тарифе "Самостоятельный", 12 месяцев на тарифе "С куратором" и бессрочный доступ на тарифе "VIP". Все обновления курса вы получаете бесплатно в рамках вашего доступа.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__question">
+                            <span>Как проходит обратная связь?</span>
+                            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq__answer">
+                            <p>На тарифах "С куратором" и "VIP" вы получаете персональную проверку домашних заданий с развёрнутыми комментариями. Также есть общий чат учеников, где можно задавать вопросы. На VIP-тарифе — личные созвоны с экспертом для разбора вашей ситуации.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__question">
+                            <span>Можно ли вернуть деньги?</span>
+                            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Да, мы даём гарантию возврата в течение 14 дней с момента покупки. Если курс вам не подошёл — напишите в поддержку, и мы вернём полную стоимость без лишних вопросов.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__question">
+                            <span>Что нужно для старта обучения?</span>
+                            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Только компьютер или ноутбук с доступом в интернет. Все необходимые инструменты и сервисы мы разберём в процессе обучения. Для регистрации на Wildberries понадобится ИП или статус самозанятого — расскажем, как это оформить.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta">
+            <div class="container">
+                <div class="final-cta__content">
+                    <h2 class="final-cta__title">Готовы освоить новую профессию?</h2>
+                    <p class="final-cta__subtitle">Присоединяйтесь к 500+ выпускникам, которые уже работают менеджерами маркетплейсов</p>
+                    <div class="final-cta__buttons">
+                        <a href="https://vk.com/id1093856370" class="btn btn--primary btn--large" target="_blank">Выбрать тариф</a>
+                        <a href="https://t.me/wbacademy" class="btn btn--outline btn--large" target="_blank">Написать в Telegram</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="#" class="logo">
+                        <span class="logo__wild">WILDBERRIES</span>
+                        <span class="logo__academy">ACADEMY</span>
+                    </a>
+                    <p class="footer__desc">Курс по профессии менеджера маркетплейсов с нуля до трудоустройства</p>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__heading">Курс</h4>
+                    <ul>
+                        <li><a href="#program">Программа</a></li>
+                        <li><a href="#pricing">Тарифы</a></li>
+                        <li><a href="#expert">Эксперт</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__heading">Контакты</h4>
+                    <ul>
+                        <li><a href="mailto:hello@wbacademy.ru">hello@wbacademy.ru</a></li>
+                        <li><a href="https://t.me/wbacademy" target="_blank">Telegram</a></li>
+                        <li><a href="https://vk.com/wbacademy" target="_blank">ВКонтакте</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__heading">Документы</h4>
+                    <ul>
+                        <li><a href="#">Оферта</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Реквизиты</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2026 Wildberries Academy. Все права защищены.</p>
+                <p>ИП Иванов А.А. • ИНН 123456789012 • ОГРНИП 123456789012345</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
