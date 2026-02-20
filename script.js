@@ -5,11 +5,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initFAQ();
-    initHeroCarousel();
     initSmoothScroll();
-    initFormSubmit();
     initScrollAnimations();
-
+    initVideoCarousel();
 });
 
 /**
@@ -64,87 +62,6 @@ function initFAQ() {
 }
 
 /**
- * Program Slider
- */
-function initProgramSlider() {
-    const slider = document.getElementById('program-slider');
-    const prevBtn = document.getElementById('prog-prev');
-    const nextBtn = document.getElementById('prog-next');
-    const dotsContainer = document.getElementById('program-dots');
-    
-    if (!slider || !prevBtn || !nextBtn) return;
-    
-    const cards = slider.querySelectorAll('.module-card');
-    const cardWidth = 280; // card width + gap
-    const totalCards = cards.length;
-    
-    // Create dots
-    const visibleCards = Math.floor(slider.offsetWidth / cardWidth) || 3;
-    const totalDots = Math.ceil(totalCards / visibleCards);
-    
-    for (let i = 0; i < totalDots; i++) {
-        const dot = document.createElement('button');
-        dot.classList.add('program__dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            slider.scrollTo({ left: i * visibleCards * cardWidth, behavior: 'smooth' });
-        });
-        dotsContainer.appendChild(dot);
-    }
-    
-    const dots = dotsContainer.querySelectorAll('.program__dot');
-    
-    // Arrow navigation
-    prevBtn.addEventListener('click', () => {
-        slider.scrollBy({ left: -cardWidth * 2, behavior: 'smooth' });
-    });
-    
-    nextBtn.addEventListener('click', () => {
-        slider.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
-    });
-    
-    // Update active dot on scroll
-    slider.addEventListener('scroll', () => {
-        const scrollPos = slider.scrollLeft;
-        const activeIndex = Math.round(scrollPos / (visibleCards * cardWidth));
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === activeIndex);
-        });
-    });
-}
-
-/**
- * Hero Carousel
- */
-function initHeroCarousel() {
-    const carousel = document.getElementById('hero-carousel');
-    if (!carousel) return;
-    
-    const slides = carousel.querySelectorAll('.hero__slide');
-    const dots = carousel.querySelectorAll('.hero__carousel-dot');
-    let current = 0;
-    
-    function goTo(index) {
-        slides[current].classList.remove('hero__slide--active');
-        dots[current].classList.remove('hero__carousel-dot--active');
-        current = index;
-        slides[current].classList.add('hero__slide--active');
-        dots[current].classList.add('hero__carousel-dot--active');
-    }
-    
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-            goTo(parseInt(dot.dataset.slide));
-        });
-    });
-    
-    // Auto-rotate every 4 seconds
-    setInterval(() => {
-        goTo((current + 1) % slides.length);
-    }, 4000);
-}
-
-/**
  * Smooth Scroll for Anchor Links
  */
 function initSmoothScroll() {
@@ -174,46 +91,6 @@ function initSmoothScroll() {
 }
 
 /**
- * Form Submission Handler
- */
-function initFormSubmit() {
-    const freeForm = document.getElementById('free-form');
-    
-    if (!freeForm) return;
-    
-    freeForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const email = freeForm.querySelector('input[type="email"]').value;
-        
-        // Here you would typically send the email to your backend
-        // For demo purposes, we'll just show a success message
-        
-        const button = freeForm.querySelector('button');
-        const originalText = button.textContent;
-        
-        button.textContent = 'Отправлено! ✓';
-        button.disabled = true;
-        button.style.background = 'var(--color-success)';
-        
-        setTimeout(() => {
-            button.textContent = originalText;
-            button.disabled = false;
-            button.style.background = '';
-            freeForm.reset();
-        }, 3000);
-        
-        // You can integrate with email services here:
-        // - Mailchimp
-        // - SendPulse
-        // - GetResponse
-        // - Custom backend
-        
-        console.log('Email submitted:', email);
-    });
-}
-
-/**
  * Scroll-triggered Animations
  */
 function initScrollAnimations() {
@@ -232,17 +109,61 @@ function initScrollAnimations() {
         });
     }, observerOptions);
     
-    // Elements to animate (excluding .case-card — results visible immediately)
-    const animateElements = document.querySelectorAll(
-        '.for-whom__card, .pricing-card, .module-row, .expert__stat'
-    );
+    const groups = [
+        '.for-whom__card',
+        '.module-row',
+        '.expert__stat'
+    ];
     
-    animateElements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-        observer.observe(el);
+    groups.forEach(selector => {
+        document.querySelectorAll(selector).forEach((el, i) => {
+            const delay = Math.min(i * 0.08, 0.4);
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(24px)';
+            el.style.transition = `opacity 0.5s ease ${delay}s, transform 0.5s ease ${delay}s`;
+            observer.observe(el);
+        });
     });
+}
+
+/**
+ * Video Reviews — single-slide Swiper with native controls
+ */
+function initVideoCarousel() {
+    const el = document.querySelector('.vr-swiper');
+    const counter = document.querySelector('.vr-showcase__counter');
+    if (!el) return;
+
+    const totalSlides = el.querySelectorAll('.swiper-slide').length;
+
+    const swiper = new Swiper('.vr-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        grabCursor: true,
+        navigation: {
+            prevEl: '.vr-showcase__arrow--prev',
+            nextEl: '.vr-showcase__arrow--next',
+        },
+        on: {
+            init: function () {
+                updateCounter(this.activeIndex + 1, totalSlides);
+            },
+            slideChange: function () {
+                updateCounter(this.activeIndex + 1, totalSlides);
+                pauseAllVideos();
+            },
+        },
+    });
+
+    function updateCounter(current, total) {
+        if (counter) counter.textContent = current + ' / ' + total;
+    }
+
+    function pauseAllVideos() {
+        el.querySelectorAll('video').forEach(v => {
+            if (!v.paused) v.pause();
+        });
+    }
 }
 
 // Add CSS for animation

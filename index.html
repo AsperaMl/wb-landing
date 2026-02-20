@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,7 +22,7 @@
             <nav class="nav" id="nav">
                 <ul class="nav__list">
                     <li><a href="#program" class="nav__link">Программа</a></li>
-                    <li><a href="#results" class="nav__link">Результаты</a></li>
+                    <li><a href="#student-results" class="nav__link">Результаты</a></li>
                     <li><a href="#cases" class="nav__link">Отзывы</a></li>
                     <li><a href="#expert" class="nav__link">Эксперт</a></li>
                     <li><a href="#faq" class="nav__link">FAQ</a></li>
@@ -72,6 +73,27 @@
                         <li>🚀 Подходит новичкам без опыта</li>
                         <li>📱 Можно с телефона</li>
                     </ul>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__photo-wrap">
+                        <img src="expert2.jpg" alt="Элина Валиева — наставник курса" class="hero__expert-img">
+                        <div class="hero__float hero__float--top">
+                            <span class="hero__float-value">350+</span>
+                            <span class="hero__float-label">учеников обучено</span>
+                        </div>
+                        <div class="hero__float hero__float--mid">
+                            <span class="hero__float-value">4+ года</span>
+                            <span class="hero__float-label">опыта на WB</span>
+                        </div>
+                        <div class="hero__float hero__float--bottom">
+                            <span class="hero__float-value">87%</span>
+                            <span class="hero__float-label">нашли работу</span>
+                        </div>
+                        <div class="hero__nameplate">
+                            <span class="hero__nameplate-name">Элина Валиева</span>
+                            <span class="hero__nameplate-role">Эксперт по маркетплейсам</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -153,17 +175,17 @@
                     <div class="results__tools">
                         <h3 class="results__heading">Инструменты</h3>
                         <div class="tools-grid">
-                            <div class="tool-badge"><img src="img/tools/wildberries.png" alt="Wildberries" width="28" height="28" style="border-radius:6px;object-fit:cover;"> Wildberries</div>
-                            <div class="tool-badge"><img src="img/tools/moneyplace.png" alt="Moneyplace" width="28" height="28" style="border-radius:6px;object-fit:cover;"> Moneyplace</div>
-                            <div class="tool-badge"><img src="img/tools/mpstats.png" alt="MPSTATS" width="28" height="28" style="border-radius:6px;object-fit:cover;"> MPSTATS</div>
-                            <div class="tool-badge"><img src="img/tools/mayak.png" alt="Маяк" width="28" height="28" style="border-radius:6px;object-fit:cover;"> «Маяк»</div>
-                            <div class="tool-badge"><img src="img/tools/marketguru.png" alt="MarketGuru" width="28" height="28" style="border-radius:6px;object-fit:cover;"> MarketGuru</div>
-                            <div class="tool-badge"><img src="img/tools/sellerfox.png" alt="SellerFox" width="28" height="28" style="border-radius:6px;object-fit:cover;"> SellerFox</div>
-                            <div class="tool-badge"><img src="img/tools/marketpapa.png" alt="MarketPapa" width="28" height="28" style="border-radius:6px;object-fit:cover;"> MarketPapa</div>
-                            <div class="tool-badge"><img src="img/tools/shopstat.png" alt="Shopstat" width="28" height="28" style="border-radius:6px;object-fit:cover;"> Shopstat</div>
-                            <div class="tool-badge"><img src="img/tools/salesfinder.png" alt="SalesFinder" width="28" height="28" style="border-radius:6px;object-fit:cover;"> SalesFinder</div>
-                            <div class="tool-badge"><img src="img/tools/sellmonitor.png" alt="Sellmonitor" width="28" height="28" style="border-radius:6px;object-fit:cover;"> Sellmonitor</div>
-                            <div class="tool-badge"><img src="img/tools/wildbox.png" alt="Wildbox" width="28" height="28" style="border-radius:6px;object-fit:cover;"> Wildbox</div>
+                            <div class="tool-badge"><img src="img/tools/wildberries.png" alt="Wildberries" width="28" height="28" loading="lazy"> Wildberries</div>
+                            <div class="tool-badge"><img src="img/tools/moneyplace.png" alt="Moneyplace" width="28" height="28" loading="lazy"> Moneyplace</div>
+                            <div class="tool-badge"><img src="img/tools/mpstats.png" alt="MPSTATS" width="28" height="28" loading="lazy"> MPSTATS</div>
+                            <div class="tool-badge"><img src="img/tools/mayak.png" alt="Маяк" width="28" height="28" loading="lazy"> «Маяк»</div>
+                            <div class="tool-badge"><img src="img/tools/marketguru.png" alt="MarketGuru" width="28" height="28" loading="lazy"> MarketGuru</div>
+                            <div class="tool-badge"><img src="img/tools/sellerfox.png" alt="SellerFox" width="28" height="28" loading="lazy"> SellerFox</div>
+                            <div class="tool-badge"><img src="img/tools/marketpapa.png" alt="MarketPapa" width="28" height="28" loading="lazy"> MarketPapa</div>
+                            <div class="tool-badge"><img src="img/tools/shopstat.png" alt="Shopstat" width="28" height="28" loading="lazy"> Shopstat</div>
+                            <div class="tool-badge"><img src="img/tools/salesfinder.png" alt="SalesFinder" width="28" height="28" loading="lazy"> SalesFinder</div>
+                            <div class="tool-badge"><img src="img/tools/sellmonitor.png" alt="Sellmonitor" width="28" height="28" loading="lazy"> Sellmonitor</div>
+                            <div class="tool-badge"><img src="img/tools/wildbox.png" alt="Wildbox" width="28" height="28" loading="lazy"> Wildbox</div>
                         </div>
                     </div>
                 </div>
@@ -232,8 +254,78 @@
             </div>
         </section>
 
+        <!-- Video Reviews Section -->
+        <section class="video-reviews" id="cases">
+            <div class="container">
+                <h2 class="section-title">Видео-отзывы <span class="highlight">учеников</span></h2>
+                <p class="section-subtitle">Послушайте, что говорят те, кто уже прошёл курс</p>
+
+                <div class="vr-showcase">
+                    <button class="vr-showcase__arrow vr-showcase__arrow--prev" aria-label="Назад">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+
+                    <div class="swiper vr-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="vr-slide">
+                                    <video class="vr-slide__video" preload="metadata" playsinline controls><source src="videos/review-3.mp4" type="video/mp4"></video>
+                                    <div class="vr-slide__info">
+                                        <span class="vr-slide__name">Анна М.</span>
+                                        <span class="vr-slide__desc">Нашла удалённую работу через 2 месяца после курса</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="vr-slide">
+                                    <video class="vr-slide__video" preload="metadata" playsinline controls><source src="videos/review-4.mp4" type="video/mp4"></video>
+                                    <div class="vr-slide__info">
+                                        <span class="vr-slide__name">Виктория Д.</span>
+                                        <span class="vr-slide__desc">Студентка 3 курса — совмещает учёбу и работу на WB</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="vr-slide">
+                                    <video class="vr-slide__video" preload="metadata" playsinline controls><source src="videos/review-1.mp4" type="video/mp4"></video>
+                                    <div class="vr-slide__info">
+                                        <span class="vr-slide__name">Елена С.</span>
+                                        <span class="vr-slide__desc">Мама в декрете — работает из дома 2 часа в день</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="vr-slide">
+                                    <video class="vr-slide__video" preload="metadata" playsinline controls><source src="videos/review-2.mp4" type="video/mp4"></video>
+                                    <div class="vr-slide__info">
+                                        <span class="vr-slide__name">Артём Н.</span>
+                                        <span class="vr-slide__desc">Студент — начал вести магазин на WB параллельно с учёбой</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="vr-slide">
+                                    <video class="vr-slide__video" preload="metadata" playsinline controls><source src="videos/review-5.mp4" type="video/mp4"></video>
+                                    <div class="vr-slide__info">
+                                        <span class="vr-slide__name">Ксения Л.</span>
+                                        <span class="vr-slide__desc">Начала зарабатывать на WB ещё во время обучения</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="vr-showcase__arrow vr-showcase__arrow--next" aria-label="Вперёд">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+
+                <div class="vr-showcase__counter"></div>
+            </div>
+        </section>
+
         <!-- Cases Section -->
-        <section class="cases" id="cases">
+        <section class="cases" id="student-results">
             <div class="container">
                 <h2 class="section-title">Результаты <span class="highlight">учеников</span></h2>
                 
@@ -336,15 +428,15 @@
                 
                 <div class="expert__content">
                     <div class="expert__photo">
-                        <img src="модель3.jpg" alt="Александр Иванов — эксперт по маркетплейсам" class="expert__photo-img">
+                        <img src="expert.jpg" alt="Элина Валиева — наставник курса" class="expert__photo-img" loading="lazy">
                     </div>
                     <div class="expert__info">
-                        <h3 class="expert__name">Александр Иванов</h3>
-                        <p class="expert__role">Эксперт по маркетплейсам, карьерный наставник</p>
+                        <h3 class="expert__name">Элина Валиева</h3>
+                        <p class="expert__role">Менеджер Wildberries, наставник курса</p>
                         
                         <div class="expert__stats">
                             <div class="expert__stat">
-                                <span class="expert__stat-value">5+ лет</span>
+                                <span class="expert__stat-value">4+ года</span>
                                 <span class="expert__stat-label">опыта на WB</span>
                             </div>
                             <div class="expert__stat">
@@ -362,8 +454,8 @@
                         </div>
                         
                         <p class="expert__bio">
-                            За 5 лет обучил более 350 менеджеров маркетплейсов. Мои ученики работают в агентствах, на крупных селлеров и ведут клиентов как фрилансеры. 
-                            Знаю, какие навыки реально нужны работодателям и как быстро найти первую работу.
+                            Действующий менеджер Wildberries с опытом более 4 лет. Обучила 350+ специалистов, которые работают в агентствах, на крупных селлеров и ведут клиентов как фрилансеры. 
+                            Знаю, какие навыки реально нужны работодателям и как быстро выйти на первый доход.
                         </p>
                     </div>
                 </div>
@@ -583,6 +675,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
