@@ -5,10 +5,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initFAQ();
-    initModules();
+    initHeroCarousel();
     initSmoothScroll();
     initFormSubmit();
     initScrollAnimations();
+
 });
 
 /**
@@ -63,33 +64,84 @@ function initFAQ() {
 }
 
 /**
- * Program Modules Accordion
+ * Program Slider
  */
-function initModules() {
-    const modules = document.querySelectorAll('.module');
+function initProgramSlider() {
+    const slider = document.getElementById('program-slider');
+    const prevBtn = document.getElementById('prog-prev');
+    const nextBtn = document.getElementById('prog-next');
+    const dotsContainer = document.getElementById('program-dots');
     
-    modules.forEach(module => {
-        const header = module.querySelector('.module__header');
-        
-        header.addEventListener('click', () => {
-            const isActive = module.classList.contains('active');
-            
-            // Close all other modules
-            modules.forEach(otherModule => {
-                otherModule.classList.remove('active');
-            });
-            
-            // Toggle current module
-            if (!isActive) {
-                module.classList.add('active');
-            }
+    if (!slider || !prevBtn || !nextBtn) return;
+    
+    const cards = slider.querySelectorAll('.module-card');
+    const cardWidth = 280; // card width + gap
+    const totalCards = cards.length;
+    
+    // Create dots
+    const visibleCards = Math.floor(slider.offsetWidth / cardWidth) || 3;
+    const totalDots = Math.ceil(totalCards / visibleCards);
+    
+    for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('program__dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            slider.scrollTo({ left: i * visibleCards * cardWidth, behavior: 'smooth' });
+        });
+        dotsContainer.appendChild(dot);
+    }
+    
+    const dots = dotsContainer.querySelectorAll('.program__dot');
+    
+    // Arrow navigation
+    prevBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: -cardWidth * 2, behavior: 'smooth' });
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+    });
+    
+    // Update active dot on scroll
+    slider.addEventListener('scroll', () => {
+        const scrollPos = slider.scrollLeft;
+        const activeIndex = Math.round(scrollPos / (visibleCards * cardWidth));
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === activeIndex);
+        });
+    });
+}
+
+/**
+ * Hero Carousel
+ */
+function initHeroCarousel() {
+    const carousel = document.getElementById('hero-carousel');
+    if (!carousel) return;
+    
+    const slides = carousel.querySelectorAll('.hero__slide');
+    const dots = carousel.querySelectorAll('.hero__carousel-dot');
+    let current = 0;
+    
+    function goTo(index) {
+        slides[current].classList.remove('hero__slide--active');
+        dots[current].classList.remove('hero__carousel-dot--active');
+        current = index;
+        slides[current].classList.add('hero__slide--active');
+        dots[current].classList.add('hero__carousel-dot--active');
+    }
+    
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            goTo(parseInt(dot.dataset.slide));
         });
     });
     
-    // Open first module by default
-    if (modules.length > 0) {
-        modules[0].classList.add('active');
-    }
+    // Auto-rotate every 4 seconds
+    setInterval(() => {
+        goTo((current + 1) % slides.length);
+    }, 4000);
 }
 
 /**
@@ -180,9 +232,9 @@ function initScrollAnimations() {
         });
     }, observerOptions);
     
-    // Elements to animate
+    // Elements to animate (excluding .case-card — results visible immediately)
     const animateElements = document.querySelectorAll(
-        '.for-whom__card, .case-card, .pricing-card, .module, .process__step, .expert__stat'
+        '.for-whom__card, .pricing-card, .module-row, .expert__stat'
     );
     
     animateElements.forEach((el, index) => {
