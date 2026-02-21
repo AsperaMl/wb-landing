@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initScrollAnimations();
     initVideoCarousel();
+    initUrgencyTimer();
 });
 
 /**
@@ -127,43 +128,85 @@ function initScrollAnimations() {
 }
 
 /**
- * Video Reviews — single-slide Swiper with native controls
+ * Video Reviews — Swiper with peek effect, dots, and custom play overlay
  */
 function initVideoCarousel() {
     const el = document.querySelector('.vr-swiper');
-    const counter = document.querySelector('.vr-showcase__counter');
     if (!el) return;
 
-    const totalSlides = el.querySelectorAll('.swiper-slide').length;
+    const isMobile = window.innerWidth < 768;
 
     const swiper = new Swiper('.vr-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 24,
+        slidesPerView: isMobile ? 1 : 1.15,
+        centeredSlides: true,
+        spaceBetween: isMobile ? 16 : 32,
+        loop: true,
         grabCursor: true,
         navigation: {
             prevEl: '.vr-showcase__arrow--prev',
             nextEl: '.vr-showcase__arrow--next',
         },
+        pagination: {
+            el: '.vr-dots',
+            clickable: true,
+        },
         on: {
-            init: function () {
-                updateCounter(this.activeIndex + 1, totalSlides);
-            },
             slideChange: function () {
-                updateCounter(this.activeIndex + 1, totalSlides);
                 pauseAllVideos();
+                resetPlayButtons();
             },
         },
     });
 
-    function updateCounter(current, total) {
-        if (counter) counter.textContent = current + ' / ' + total;
-    }
-
     function pauseAllVideos() {
         el.querySelectorAll('video').forEach(v => {
-            if (!v.paused) v.pause();
+            if (!v.paused) {
+                v.pause();
+                v.removeAttribute('controls');
+            }
         });
     }
+
+    function resetPlayButtons() {
+        el.querySelectorAll('.vr-card__play').forEach(btn => {
+            btn.classList.remove('hidden');
+        });
+    }
+
+    document.querySelectorAll('.vr-card__play').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const card = this.closest('.vr-card');
+            const video = card.querySelector('video');
+            if (!video) return;
+
+            pauseAllVideos();
+            resetPlayButtons();
+
+            this.classList.add('hidden');
+            video.setAttribute('controls', '');
+            video.play();
+        });
+    });
+
+    el.querySelectorAll('video').forEach(video => {
+        video.addEventListener('pause', function () {
+            const card = this.closest('.vr-card');
+            const btn = card.querySelector('.vr-card__play');
+            if (this.ended && btn) {
+                btn.classList.remove('hidden');
+                this.removeAttribute('controls');
+            }
+        });
+
+        video.addEventListener('ended', function () {
+            const card = this.closest('.vr-card');
+            const btn = card.querySelector('.vr-card__play');
+            if (btn) {
+                btn.classList.remove('hidden');
+                this.removeAttribute('controls');
+            }
+        });
+    });
 }
 
 // Add CSS for animation
@@ -188,4 +231,55 @@ window.addEventListener('scroll', () => {
         header.style.background = 'rgba(13, 11, 30, 0.95)';
     }
 });
+
+/**
+ * Urgency countdown timer — persists deadline in localStorage
+ */
+function initUrgencyTimer() {
+    const badge = document.getElementById('urgency');
+    const closeBtn = document.getElementById('urgency-close');
+    if (!badge) return;
+
+    
+
+    const STORAGE_KEY = 'urgency_deadline_v2';
+    let deadline = localStorage.getItem(STORAGE_KEY);
+    if (!deadline || new Date(deadline) <= new Date()) {
+        const d = new Date();
+        d.setDate(d.getDate() + 2);
+        d.setHours(d.getHours() + 3);
+        deadline = d.toISOString();
+        localStorage.setItem(STORAGE_KEY, deadline);
+    }
+
+    const end = new Date(deadline);
+
+    function tick() {
+        const now = new Date();
+        let diff = Math.max(0, Math.floor((end - now) / 1000));
+
+        const days = Math.floor(diff / 86400); diff %= 86400;
+        const hours = Math.floor(diff / 3600); diff %= 3600;
+        const mins = Math.floor(diff / 60);
+        const secs = diff % 60;
+
+        document.getElementById('u-days').textContent = String(days).padStart(2, '0');
+        document.getElementById('u-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('u-mins').textContent = String(mins).padStart(2, '0');
+        document.getElementById('u-secs').textContent = String(secs).padStart(2, '0');
+
+        if (days === 0 && hours === 0 && mins === 0 && secs === 0) {
+            localStorage.removeItem(STORAGE_KEY);
+        }
+    }
+
+    tick();
+    setInterval(tick, 1000);
+
+    closeBtn.addEventListener('click', () => {
+        badge.classList.add('hidden');
+    });
+
+    setTimeout(() => { badge.style.opacity = '1'; }, 2000);
+}
 
